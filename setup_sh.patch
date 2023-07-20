@@ -1,0 +1,27 @@
+--- orig/setup.sh	2023-07-20 12:38:00.054049483 +0200
++++ setup.sh	2023-07-21 01:49:48.628036309 +0200
+@@ -4,7 +4,7 @@
+ # setup environment variables to use release
+ 
+ sourcedir="$( dirname -- "${BASH_SOURCE[0]:-$0}";)"
+-rel_root=${sourcedir}/..
++rel_root=$(realpath ${sourcedir}/..)
+ echo "Setting up release in ${rel_root}"
+ 
+ # NB required for Arras to function (it needs to find execComp)
+@@ -24,8 +24,13 @@
+ export MOONRAY_CLASS_PATH=${rel_root}/shader_json
+ 
+ # add Hydra plugins to path
+-export PXR_PLUGIN_PATH=${rel_root}/plugin/usd:${PXR_PLUGIN_PATH}
+-export PXR_PLUGINPATH_NAME=${rel_root}/plugin/usd:${PXR_PLUGINPATH_NAME}
++for plugpath in ${rel_root}/plugin/usd/*; do
++    export PXR_PLUGIN_PATH=$plugpath/:${PXR_PLUGIN_PATH}
++    export PXR_PLUGINPATH_NAME=$plugpath/:${PXR_PLUGINPATH_NAME}
++done
++
++# add USD python modules
++export PYTHONPATH=%USD_LIB%:$PYTHONPATH
+ 
+ # create shader descriptions if they don't exist
+ if [ ! -d "${rel_root}/shader_json" ]

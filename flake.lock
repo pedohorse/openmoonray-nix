@@ -1,0 +1,68 @@
+{
+  "nodes": {
+    "myusd": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689894519,
+        "narHash": "sha256-4ajHzoU/+bmGNuHqtsMlylqBSAdqozrTu7xJoXZYzg4=",
+        "owner": "pedohorse",
+        "repo": "usd-nix",
+        "rev": "0bdac6dbff094ec2bb67abc09cb66a1db2f90fb9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pedohorse",
+        "repo": "usd-nix",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1689349487,
+        "narHash": "sha256-yl5IwqYAtZ/C3ATZsmn1mk6Zh6XlaqfyCAC54Ghl/vM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "22d4983e9a32c9ccfe79603650d3da09a45d982b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "random123pkg": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689895370,
+        "narHash": "sha256-wigUDIXX77NqqqtWMgKf7IiWLHIN02zAqWGkl5iomwg=",
+        "owner": "pedohorse",
+        "repo": "random123-nix",
+        "rev": "34a856dda610f912839f998af13a1098087321e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pedohorse",
+        "repo": "random123-nix",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "myusd": "myusd",
+        "nixpkgs": "nixpkgs",
+        "random123pkg": "random123pkg"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
